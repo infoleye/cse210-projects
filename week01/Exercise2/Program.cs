@@ -41,7 +41,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("Sorry, you did not pass the course.");
+            Console.WriteLine("Sorry, you did not pass the course, try again next time.");
         }
     }
 }
