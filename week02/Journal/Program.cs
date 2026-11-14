@@ -1,8 +1,9 @@
 using System;
 
 // Exceeding Requirements:
-// I added 3 additional journal prompts beyond the required minimum of 5 prompts.
-// This increases variety and improves the journaling experience.
+// I added a "Show Random Entry" feature.
+// This allows users to display a randomly selected journal entry,
+// helping them review and reflect on previous experiences.
 
 class Program
 {
@@ -13,7 +14,7 @@ class Program
 
         int choice = 0;
 
-        while (choice != 5)
+        while (choice != 6)
         {
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
@@ -21,7 +22,8 @@ class Program
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("5. Show Random Entry");
+            Console.WriteLine("6. Quit");
             Console.Write("Select a choice from the menu: ");
 
             choice = int.Parse(Console.ReadLine());
@@ -60,6 +62,11 @@ class Program
                 string fileName = Console.ReadLine();
 
                 journal.SaveToFile(fileName);
+            }
+
+            else if (choice == 5)
+            {
+                journal.DisplayRandomEntry();
             }
         }
     }

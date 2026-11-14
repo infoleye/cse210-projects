@@ -51,4 +51,20 @@ public class Journal
             _entries.Add(entry);
         }
     }
+
+    public void DisplayRandomEntry()
+    {
+        if (_entries.Count == 0)
+        {
+            Console.WriteLine("There are no journal entries to display.");
+            return;
+        }
+
+        Random random = new Random();
+
+        int index = random.Next(_entries.Count);
+
+        _entries[index].Display();
+    
+    }
 }
